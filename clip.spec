@@ -49,9 +49,9 @@ Requires:	gettext
 Requires:	make
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-# ???
-%define		clipdir		/usr/clip/
-%define		tmpclipdir	/tmp/clip/
+%define		clipdir		%{_libdir}/clip
+# XXX: build inside builddir
+%define		tmpclipdir	/tmp/clip
 
 %description
 This package includes the clip compiler.
@@ -310,24 +310,24 @@ rm -rf $RPM_BUILD_ROOT
 # XXX: FHS!
 install -d $RPM_BUILD_ROOT%{_prefix}/clip
 
-mv %{tmpclipdir}/%{version}-%{release}/bin			$RPM_BUILD_ROOT%{_prefix}/clip
-mv %{tmpclipdir}/%{version}-%{release}/cliprc		$RPM_BUILD_ROOT%{_prefix}/clip
-mv %{tmpclipdir}/%{version}-%{release}/codb_ab		$RPM_BUILD_ROOT%{_prefix}/clip
-mv %{tmpclipdir}/%{version}-%{release}/doc			$RPM_BUILD_ROOT%{_prefix}/clip
-mv %{tmpclipdir}/%{version}-%{release}/include		$RPM_BUILD_ROOT%{_prefix}/clip
-mv %{tmpclipdir}/%{version}-%{release}/keymaps		$RPM_BUILD_ROOT%{_prefix}/clip
-mv %{tmpclipdir}/%{version}-%{release}/lib			$RPM_BUILD_ROOT%{_prefix}/clip
-mv %{tmpclipdir}/%{version}-%{release}/locale.po	$RPM_BUILD_ROOT%{_prefix}/clip
-mv %{tmpclipdir}/%{version}-%{release}/term			$RPM_BUILD_ROOT%{_prefix}/clip
-mv %{tmpclipdir}/%{version}-%{release}/charsets		$RPM_BUILD_ROOT%{_prefix}/clip
-mv %{tmpclipdir}/%{version}-%{release}/cobra		$RPM_BUILD_ROOT%{_prefix}/clip
-mv %{tmpclipdir}/%{version}-%{release}/codb_abx		$RPM_BUILD_ROOT%{_prefix}/clip
-mv %{tmpclipdir}/%{version}-%{release}/etc			$RPM_BUILD_ROOT%{_prefix}/clip
-mv %{tmpclipdir}/%{version}-%{release}/kamache		$RPM_BUILD_ROOT%{_prefix}/clip
-mv %{tmpclipdir}/%{version}-%{release}/lang			$RPM_BUILD_ROOT%{_prefix}/clip
-mv %{tmpclipdir}/%{version}-%{release}/locale.mo	$RPM_BUILD_ROOT%{_prefix}/clip
-mv %{tmpclipdir}/%{version}-%{release}/locale.pot	$RPM_BUILD_ROOT%{_prefix}/clip
-
+# XXX: don't move, it breaks short-circuit
+mv %{tmpclipdir}/%{version}-%{release}/bin		$RPM_BUILD_ROOT%{clibdir}
+mv %{tmpclipdir}/%{version}-%{release}/cliprc		$RPM_BUILD_ROOT%{clibdir}
+mv %{tmpclipdir}/%{version}-%{release}/codb_ab		$RPM_BUILD_ROOT%{clibdir}
+mv %{tmpclipdir}/%{version}-%{release}/doc		$RPM_BUILD_ROOT%{clibdir}
+mv %{tmpclipdir}/%{version}-%{release}/include		$RPM_BUILD_ROOT%{clibdir}
+mv %{tmpclipdir}/%{version}-%{release}/keymaps		$RPM_BUILD_ROOT%{clibdir}
+mv %{tmpclipdir}/%{version}-%{release}/lib		$RPM_BUILD_ROOT%{clibdir}
+mv %{tmpclipdir}/%{version}-%{release}/locale.po	$RPM_BUILD_ROOT%{clibdir}
+mv %{tmpclipdir}/%{version}-%{release}/term		$RPM_BUILD_ROOT%{clibdir}
+mv %{tmpclipdir}/%{version}-%{release}/charsets		$RPM_BUILD_ROOT%{clibdir}
+mv %{tmpclipdir}/%{version}-%{release}/cobra		$RPM_BUILD_ROOT%{clibdir}
+mv %{tmpclipdir}/%{version}-%{release}/codb_abx		$RPM_BUILD_ROOT%{clibdir}
+mv %{tmpclipdir}/%{version}-%{release}/etc		$RPM_BUILD_ROOT%{clibdir}
+mv %{tmpclipdir}/%{version}-%{release}/kamache		$RPM_BUILD_ROOT%{clibdir}
+mv %{tmpclipdir}/%{version}-%{release}/lang		$RPM_BUILD_ROOT%{clibdir}
+mv %{tmpclipdir}/%{version}-%{release}/locale.mo	$RPM_BUILD_ROOT%{clibdir}
+mv %{tmpclipdir}/%{version}-%{release}/locale.pot	$RPM_BUILD_ROOT%{clibdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -596,7 +596,6 @@ rm -rf $RPM_BUILD_ROOT
 %{clipdir}/lib/libclip-crypto.*
 %endif
 
-
 %if "%{with_cti}" != "0"
 %files cti
 %defattr(644,root,root,755)
@@ -635,7 +634,6 @@ rm -rf $RPM_BUILD_ROOT
 #%{clipdir}/locale.mo/*/clip-gtk2.mo
 #%{clipdir}/locale.po/*/clip-gtk2.po
 #%{clipdir}/locale.pot/clip-gtk2/*
-
 %endif
 
 %if "%{with_gzip}" != "0"
