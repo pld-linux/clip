@@ -33,6 +33,7 @@ URL:		http://www.itk.ru/
 %{?with_bzip2:BuildRequires:	bzip2-devel}
 BuildRequires:	flex
 BuildRequires:	gettext
+BuildRequires:	pam-devel
 %{?with_gd:BuildRequires:	gd-devel}
 %{?with_gtk:BuildRequires:	gtk+-devel}
 %{?with_gtk2:BuildRequires:	gtk+2-devel >= 1:2.0}
@@ -460,7 +461,7 @@ rm -rf $RPM_BUILD_ROOT
 # 
 %{clipdir}/locale.mo/*/clip-cti.mo
 %{clipdir}/locale.mo/*/clip-fw.mo
-%{clipdir}/locale.mo/*/clip-gtk2.mo
+#%{clipdir}/locale.mo/*/clip-gtk2.mo
 %{clipdir}/locale.mo/*/clip-r2d2.mo
 %{clipdir}/locale.mo/*/mod-ini.mo
 %{clipdir}/locale.mo/*/clip.mo
