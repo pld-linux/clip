@@ -20,7 +20,7 @@
 Summary:	XBASE/Clipper compatible program compiler
 Summary(pl):	Kompilator programów kompatybilny z XBASE/Clipperem
 Name:		clip
-Version:	1.1.11
+Version:	1.1.12
 Release:	0.1
 License:	GPL
 Group:		Development/Languages
@@ -50,7 +50,8 @@ Requires:	make
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # ???
-%define		clipdir		/tmp/clip/%{version}-%{release}
+%define		clipdir		/usr/clip/
+%define		tmpclipdir	/tmp/clip/
 
 %description
 This package includes the clip compiler.
@@ -299,15 +300,34 @@ Ten pakiet dostarcza wi±zanie fw dla pakietu CLIP.
 #rm -f -R clip-prg
 
 %build
-install -d %{clipdir}
-export CLIPROOT=%{clipdir}
+install -d %{tmpclipdir}
+export CLIPROOT=%{tmpclipdir}
+mkdir -p $CLIPROOT
 %{__make} local
 
 %install
 rm -rf $RPM_BUILD_ROOT
 # XXX: FHS!
 install -d $RPM_BUILD_ROOT%{_prefix}/clip
-mv -f %{clipdir} $RPM_BUILD_ROOT%{_prefix}/clip
+
+mv %{tmpclipdir}/%{version}-%{release}/bin			$RPM_BUILD_ROOT%{_prefix}/clip
+mv %{tmpclipdir}/%{version}-%{release}/cliprc		$RPM_BUILD_ROOT%{_prefix}/clip
+mv %{tmpclipdir}/%{version}-%{release}/codb_ab		$RPM_BUILD_ROOT%{_prefix}/clip
+mv %{tmpclipdir}/%{version}-%{release}/doc			$RPM_BUILD_ROOT%{_prefix}/clip
+mv %{tmpclipdir}/%{version}-%{release}/include		$RPM_BUILD_ROOT%{_prefix}/clip
+mv %{tmpclipdir}/%{version}-%{release}/keymaps		$RPM_BUILD_ROOT%{_prefix}/clip
+mv %{tmpclipdir}/%{version}-%{release}/lib			$RPM_BUILD_ROOT%{_prefix}/clip
+mv %{tmpclipdir}/%{version}-%{release}/locale.po	$RPM_BUILD_ROOT%{_prefix}/clip
+mv %{tmpclipdir}/%{version}-%{release}/term			$RPM_BUILD_ROOT%{_prefix}/clip
+mv %{tmpclipdir}/%{version}-%{release}/charsets		$RPM_BUILD_ROOT%{_prefix}/clip
+mv %{tmpclipdir}/%{version}-%{release}/cobra		$RPM_BUILD_ROOT%{_prefix}/clip
+mv %{tmpclipdir}/%{version}-%{release}/codb_abx		$RPM_BUILD_ROOT%{_prefix}/clip
+mv %{tmpclipdir}/%{version}-%{release}/etc			$RPM_BUILD_ROOT%{_prefix}/clip
+mv %{tmpclipdir}/%{version}-%{release}/kamache		$RPM_BUILD_ROOT%{_prefix}/clip
+mv %{tmpclipdir}/%{version}-%{release}/lang			$RPM_BUILD_ROOT%{_prefix}/clip
+mv %{tmpclipdir}/%{version}-%{release}/locale.mo	$RPM_BUILD_ROOT%{_prefix}/clip
+mv %{tmpclipdir}/%{version}-%{release}/locale.pot	$RPM_BUILD_ROOT%{_prefix}/clip
+
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -357,7 +377,7 @@ rm -rf $RPM_BUILD_ROOT
 %{clipdir}/include/clip.ch
 %{clipdir}/include/fwin/*
 %{clipdir}/include/clip.h
-%{clipdir}/include/clipbase.h
+#%{clipdir}/include/clipbase.h
 %{clipdir}/include/clipbrd.ch
 %{clipdir}/include/clipcfg.h
 %{clipdir}/include/clipcfg.sh
