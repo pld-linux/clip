@@ -25,7 +25,7 @@ Release:	0.1
 License:	GPL
 Group:		Development/Languages
 Source0:	ftp://ftp.itk.ru/pub/clip/%{name}-prg-%{version}-1.tgz
-#Source1:	 patch.tgz
+#Source1:	patch.tgz
 #Patch0:		clip-gtk2-windowgroupRemove.cis.patch
 #Patch1:		clip-gtk2-transparent-EventBox.cis.patch
 URL:		http://www.itk.ru/
