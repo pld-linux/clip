@@ -162,14 +162,12 @@ This package provides cti binding for CLIP.
 %description cti -l pl
 Ten pakiet dostarcza wi您anie cti dla pakietu CLIP.
 
-%if "%{with_gtk}" != "0"
 %package gtk
 Summary:	CLIP gtk+ binding
 Summary(pl):	Wi您anie gtk+ dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	gtk+
-%endif
 
 %description gtk
 This package provides gtk+ binding for CLIP.
@@ -177,7 +175,6 @@ This package provides gtk+ binding for CLIP.
 %description gtk -l pl
 Ten pakiet dostarcza wi您anie gtk+ dla pakietu CLIP.
 
-%if "%{with_gtk2}" != "0"
 %package gtk2
 Summary:	CLIP gtk+2 binding
 Summary(pl):	Wi您anie gtk+2 dla pakietu CLIP
@@ -190,7 +187,6 @@ This package provides gtk2 binding for CLIP.
 
 %description gtk2 -l pl
 Ten pakiet dostarcza wi您anie gtk+2 dla pakietu CLIP.
-%endif
 
 %package gzip
 Summary:	CLIP gzip binding
