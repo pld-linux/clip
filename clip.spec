@@ -20,11 +20,12 @@
 Summary:	XBASE/Clipper compatible program compiler
 Summary(pl):	Kompilator programów kompatybilny z XBASE/Clipperem
 Name:		clip
-Version:	1.1.12
+Version:	1.1.13
 Release:	0.1
 License:	GPL
 Group:		Development/Languages
 Source0:	ftp://ftp.itk.ru/pub/clip/%{name}-prg-%{version}-1.tgz
+# Source0-md5:	9debdcf2d879035b941ddc79850fde8d
 #Source1:	patch.tgz
 #Patch0:		clip-gtk2-windowgroupRemove.cis.patch
 #Patch1:		clip-gtk2-transparent-EventBox.cis.patch
@@ -51,7 +52,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		clipdir		%{_libdir}/clip
 # XXX: build inside builddir
-%define		tmpclipdir	/tmp/clip
+%define		tmpclipdir	%{_builddir}/clip-installed
 
 %description
 This package includes the clip compiler.
@@ -308,26 +309,26 @@ mkdir -p $CLIPROOT
 %install
 rm -rf $RPM_BUILD_ROOT
 # XXX: FHS!
-install -d $RPM_BUILD_ROOT%{_prefix}/clip
+install -d $RPM_BUILD_ROOT%{clipdir}
 
 # XXX: don't move, it breaks short-circuit
-mv %{tmpclipdir}/%{version}-%{release}/bin		$RPM_BUILD_ROOT%{clibdir}
-mv %{tmpclipdir}/%{version}-%{release}/cliprc		$RPM_BUILD_ROOT%{clibdir}
-mv %{tmpclipdir}/%{version}-%{release}/codb_ab		$RPM_BUILD_ROOT%{clibdir}
-mv %{tmpclipdir}/%{version}-%{release}/doc		$RPM_BUILD_ROOT%{clibdir}
-mv %{tmpclipdir}/%{version}-%{release}/include		$RPM_BUILD_ROOT%{clibdir}
-mv %{tmpclipdir}/%{version}-%{release}/keymaps		$RPM_BUILD_ROOT%{clibdir}
-mv %{tmpclipdir}/%{version}-%{release}/lib		$RPM_BUILD_ROOT%{clibdir}
-mv %{tmpclipdir}/%{version}-%{release}/locale.po	$RPM_BUILD_ROOT%{clibdir}
-mv %{tmpclipdir}/%{version}-%{release}/term		$RPM_BUILD_ROOT%{clibdir}
-mv %{tmpclipdir}/%{version}-%{release}/charsets		$RPM_BUILD_ROOT%{clibdir}
-mv %{tmpclipdir}/%{version}-%{release}/cobra		$RPM_BUILD_ROOT%{clibdir}
-mv %{tmpclipdir}/%{version}-%{release}/codb_abx		$RPM_BUILD_ROOT%{clibdir}
-mv %{tmpclipdir}/%{version}-%{release}/etc		$RPM_BUILD_ROOT%{clibdir}
-mv %{tmpclipdir}/%{version}-%{release}/kamache		$RPM_BUILD_ROOT%{clibdir}
-mv %{tmpclipdir}/%{version}-%{release}/lang		$RPM_BUILD_ROOT%{clibdir}
-mv %{tmpclipdir}/%{version}-%{release}/locale.mo	$RPM_BUILD_ROOT%{clibdir}
-mv %{tmpclipdir}/%{version}-%{release}/locale.pot	$RPM_BUILD_ROOT%{clibdir}
+cp -r %{tmpclipdir}/bin			$RPM_BUILD_ROOT%{clipdir}
+cp -r %{tmpclipdir}/cliprc		$RPM_BUILD_ROOT%{clipdir}
+cp -r %{tmpclipdir}/codb_ab		$RPM_BUILD_ROOT%{clipdir}
+cp -r %{tmpclipdir}/doc			$RPM_BUILD_ROOT%{clipdir}
+cp -r %{tmpclipdir}/include		$RPM_BUILD_ROOT%{clipdir}
+cp -r %{tmpclipdir}/keymaps		$RPM_BUILD_ROOT%{clipdir}
+cp -r %{tmpclipdir}/lib			$RPM_BUILD_ROOT%{clipdir}
+cp -r %{tmpclipdir}/locale.po	$RPM_BUILD_ROOT%{clipdir}
+cp -r %{tmpclipdir}/term		$RPM_BUILD_ROOT%{clipdir}
+cp -r %{tmpclipdir}/charsets	$RPM_BUILD_ROOT%{clipdir}
+cp -r %{tmpclipdir}/cobra		$RPM_BUILD_ROOT%{clipdir}
+cp -r %{tmpclipdir}/codb_abx	$RPM_BUILD_ROOT%{clipdir}
+cp -r %{tmpclipdir}/etc			$RPM_BUILD_ROOT%{clipdir}
+cp -r %{tmpclipdir}/kamache		$RPM_BUILD_ROOT%{clipdir}
+cp -r %{tmpclipdir}/lang		$RPM_BUILD_ROOT%{clipdir}
+cp -r %{tmpclipdir}/locale.mo	$RPM_BUILD_ROOT%{clipdir}
+cp -r %{tmpclipdir}/locale.pot	$RPM_BUILD_ROOT%{clipdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -456,6 +457,12 @@ rm -rf $RPM_BUILD_ROOT
 %{clipdir}/include/rp_run.ch
 %{clipdir}/include/bggraph.ch
 # XXX: missing dirs below!
+# 
+%{clipdir}/locale.mo/*/clip-cti.mo
+%{clipdir}/locale.mo/*/clip-fw.mo
+%{clipdir}/locale.mo/*/clip-gtk2.mo
+%{clipdir}/locale.mo/*/clip-r2d2.mo
+%{clipdir}/locale.mo/*/mod-ini.mo
 %{clipdir}/locale.mo/*/clip.mo
 %{clipdir}/locale.mo/*/cliprt.mo
 %{clipdir}/locale.po/*/clip.po
@@ -482,7 +489,7 @@ rm -rf $RPM_BUILD_ROOT
 %{clipdir}/locale.mo/*/udb.mo
 %{clipdir}/locale.pot/udb/*
 
-%{clipdir}/locale.pot/udbx/*.pot
+#%{clipdir}/locale.pot/udbx/*.pot
 %{clipdir}/locale.po/*/udbx.po
 %{clipdir}/locale.mo/*/udbx.mo
 
@@ -612,11 +619,11 @@ rm -rf $RPM_BUILD_ROOT
 %if "%{with_gtk}" != "0"
 %files gtk
 %defattr(644,root,root,755)
-%{clipdir}/cliprc/clip-gtk.cliprc
-%{clipdir}/doc/example/clip-gtk
-%{clipdir}/include/clip-gtk.ch
-%{clipdir}/include/clip-gtk.h
-%{clipdir}/lib/libclip-gtk.*
+#%{clipdir}/cliprc/clip-gtk.cliprc
+#%{clipdir}/doc/example/clip-gtk
+#%{clipdir}/include/clip-gtk.ch
+#%{clipdir}/include/clip-gtk.h
+#%{clipdir}/lib/libclip-gtk.*
 #%{clipdir}/locale.mo/*/clip-gtk.mo
 #%{clipdir}/locale.po/*/clip-gtk.po
 #%{clipdir}/locale.pot/clip-gtk/*
