@@ -34,7 +34,7 @@ BuildRequires:	flex
 BuildRequires:	gettext
 %{?with_gd:BuildRequires:	gd-devel}
 %{?with_gtk:BuildRequires:	gtk+-devel}
-%{?with_gtk2:BuildRequires:	gtk+2-devel >= 2.0}
+%{?with_gtk2:BuildRequires:	gtk+2-devel >= 1:2.0}
 %{?with_mysql:BuildRequires:	mysql-devel}
 %{?with_crypto:BuildRequires:	openssl-devel}
 %{?with_postgres:BuildRequires:	postgresql-devel}
