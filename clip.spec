@@ -50,7 +50,7 @@ Requires:	make
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # ???
-%define		clipdir		/tmp/clip/%{version}-%{rel}
+%define		clipdir		/tmp/clip/%{version}-%{release}
 
 %description
 This package includes the clip compiler.
@@ -90,7 +90,7 @@ pakietu CLIP.
 
 %package cobra
 Summary:	COBRA development for clip
-Summary)pl):	Biblioteki COBRA dla pakietu clip
+Summary(pl):	Biblioteki COBRA dla pakietu clip
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 
@@ -127,7 +127,7 @@ Ten pakiet dostarcza wi您anie bzip2 dla pakiet CLIP.
 
 %package com
 Summary:	COM-port binding for CLIP
-Summary)pl):	Wi您anie portu COM dla pakietu CLIP
+Summary(pl):	Wi您anie portu COM dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 
@@ -169,6 +169,7 @@ Summary(pl):	Wi您anie gtk+ dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	gtk+
+%endif
 
 %description gtk
 This package provides gtk+ binding for CLIP.
@@ -189,6 +190,7 @@ This package provides gtk2 binding for CLIP.
 
 %description gtk2 -l pl
 Ten pakiet dostarcza wi您anie gtk+2 dla pakietu CLIP.
+%endif
 
 %package gzip
 Summary:	CLIP gzip binding
