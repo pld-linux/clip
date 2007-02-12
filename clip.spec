@@ -18,7 +18,7 @@
 %bcond_with	fw
 #
 Summary:	XBASE/Clipper compatible program compiler
-Summary(pl.UTF-8):   Kompilator programów kompatybilny z XBASE/Clipperem
+Summary(pl.UTF-8):	Kompilator programów kompatybilny z XBASE/Clipperem
 Name:		clip
 Version:	1.1.13
 Release:	0.1
@@ -64,7 +64,7 @@ Ten pakiet zawiera kompilator clip.
 %package utils
 # ??? the same as -lib? but different dep
 Summary:	Utilities for CLIP
-Summary(pl.UTF-8):   Narzędzia dla pakietu CLIP
+Summary(pl.UTF-8):	Narzędzia dla pakietu CLIP
 Group:		Development/Tools
 Requires:	%{name} = %{version}-%{release}
 
@@ -76,7 +76,7 @@ Narzędzia dla pakietu CLIP.
 
 %package lib
 Summary:	Runtime library for clip
-Summary(pl.UTF-8):   Biblioteka uruchomieniowa dla pakietu clip
+Summary(pl.UTF-8):	Biblioteka uruchomieniowa dla pakietu clip
 Group:		Libraries
 # ??? not used
 #PreReq:		/sbin/ldconfig
@@ -93,7 +93,7 @@ pakietu CLIP.
 
 %package cobra
 Summary:	COBRA development for clip
-Summary(pl.UTF-8):   Biblioteki COBRA dla pakietu clip
+Summary(pl.UTF-8):	Biblioteki COBRA dla pakietu clip
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 
@@ -105,7 +105,7 @@ Ten pakiet dostarcza biblioteki COBRA dla pakietu clip.
 
 %package codb
 Summary:	CLIP object data base
-Summary(pl.UTF-8):   Obiektowa baza danych CLIP
+Summary(pl.UTF-8):	Obiektowa baza danych CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 
@@ -117,7 +117,7 @@ Ten pakiet dostarcza obiektową bazę danych CLIP.
 
 %package bzip2
 Summary:	CLIP bzip2 binding
-Summary(pl.UTF-8):   Wiązanie bzip2 dla pakietu CLIP
+Summary(pl.UTF-8):	Wiązanie bzip2 dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	bzip2-libs
@@ -130,7 +130,7 @@ Ten pakiet dostarcza wiązanie bzip2 dla pakiet CLIP.
 
 %package com
 Summary:	COM-port binding for CLIP
-Summary(pl.UTF-8):   Wiązanie portu COM dla pakietu CLIP
+Summary(pl.UTF-8):	Wiązanie portu COM dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 
@@ -142,7 +142,7 @@ Wiązanie portu COM dla pakietu CLIP.
 
 %package crypto
 Summary:	CLIP cryptographic binding
-Summary(pl.UTF-8):   Wiązanie kryptograficzne CLIP
+Summary(pl.UTF-8):	Wiązanie kryptograficzne CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	openssl
@@ -155,7 +155,7 @@ Ten pakiet dostarcza wiązanie kryptograficzne dla pakietu CLIP.
 
 %package cti
 Summary:	CLIP cti binding
-Summary(pl.UTF-8):   Wiązanie cti dla pakietu CLIP
+Summary(pl.UTF-8):	Wiązanie cti dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 
@@ -167,7 +167,7 @@ Ten pakiet dostarcza wiązanie cti dla pakietu CLIP.
 
 %package gtk
 Summary:	CLIP GTK+ binding
-Summary(pl.UTF-8):   Wiązanie GTK+ dla pakietu CLIP
+Summary(pl.UTF-8):	Wiązanie GTK+ dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	gtk+
@@ -180,7 +180,7 @@ Ten pakiet dostarcza wiązanie GTK+ dla pakietu CLIP.
 
 %package gtk2
 Summary:	CLIP GTK+2 binding
-Summary(pl.UTF-8):   Wiązanie GTK+2 dla pakietu CLIP
+Summary(pl.UTF-8):	Wiązanie GTK+2 dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	gtk+2
@@ -193,7 +193,7 @@ Ten pakiet dostarcza wiązanie GTK+2 dla pakietu CLIP.
 
 %package gzip
 Summary:	CLIP gzip binding
-Summary(pl.UTF-8):   Wiązanie gzip dla pakietu CLIP
+Summary(pl.UTF-8):	Wiązanie gzip dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	zlib
@@ -206,7 +206,7 @@ Ten pakiet dostarcza wiązanie gzip dla pakietu CLIP.
 
 %package mysql
 Summary:	CLIP MySQL binding
-Summary(pl.UTF-8):   Wiązanie MySQL dla pakietu CLIP
+Summary(pl.UTF-8):	Wiązanie MySQL dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	mysql
@@ -219,7 +219,7 @@ Ten pakiet dostarcza wiązanie MySQL dla pakietu CLIP.
 
 %package oasis
 Summary:	CLIP oasis binding
-Summary(pl.UTF-8):   Wiązanie oasis dla pakietu CLIP
+Summary(pl.UTF-8):	Wiązanie oasis dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 
@@ -231,7 +231,7 @@ Ten pakiet dostarcza wiązanie oasis dla pakietu CLIP.
 
 %package odbc
 Summary:	CLIP ODBC binding
-Summary(pl.UTF-8):   Wiązanie ODBC dla pakietu CLIP
+Summary(pl.UTF-8):	Wiązanie ODBC dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	unixODBC
@@ -244,7 +244,7 @@ Ten pakiet dostarcza wiązanie ODBC dla pakietu CLIP.
 
 %package postgres
 Summary:	CLIP PostgreSQL binding
-Summary(pl.UTF-8):   Wiązanie PostgreSQL dla pakietu CLIP
+Summary(pl.UTF-8):	Wiązanie PostgreSQL dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	postgresql-libs
@@ -257,7 +257,7 @@ Ten pakiet dostarcza wiązanie PostgreSQL dla pakietu CLIP.
 
 %package rtf
 Summary:	CLIP RTF binding
-Summary(pl.UTF-8):   Wiązanie RTF dla pakietu CLIP
+Summary(pl.UTF-8):	Wiązanie RTF dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 
@@ -269,7 +269,7 @@ Ten pakiet dostarcza wiązanie RTF dla pakietu CLIP.
 
 %package gd
 Summary:	CLIP gd binding
-Summary(pl.UTF-8):   Wiązanie gd dla pakietu CLIP
+Summary(pl.UTF-8):	Wiązanie gd dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	gd
@@ -282,7 +282,7 @@ Ten pakiet dostarcza wiązanie gd dla pakietu CLIP.
 
 %package fw
 Summary:	CLIP fw binding
-Summary(pl.UTF-8):   Wiązanie fw dla pakietu CLIP
+Summary(pl.UTF-8):	Wiązanie fw dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 
