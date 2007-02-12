@@ -18,7 +18,7 @@
 %bcond_with	fw
 #
 Summary:	XBASE/Clipper compatible program compiler
-Summary(pl):	Kompilator programów kompatybilny z XBASE/Clipperem
+Summary(pl.UTF-8):   Kompilator programÃ³w kompatybilny z XBASE/Clipperem
 Name:		clip
 Version:	1.1.13
 Release:	0.1
@@ -58,25 +58,25 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 This package includes the clip compiler.
 
-%description -l pl
+%description -l pl.UTF-8
 Ten pakiet zawiera kompilator clip.
 
 %package utils
 # ??? the same as -lib? but different dep
 Summary:	Utilities for CLIP
-Summary(pl):	Narzêdzia dla pakietu CLIP
+Summary(pl.UTF-8):   NarzÄ™dzia dla pakietu CLIP
 Group:		Development/Tools
 Requires:	%{name} = %{version}-%{release}
 
 %description utils
 Utilities for CLIP.
 
-%description utils -l pl
-Narzêdzia dla pakietu CLIP.
+%description utils -l pl.UTF-8
+NarzÄ™dzia dla pakietu CLIP.
 
 %package lib
 Summary:	Runtime library for clip
-Summary(pl):	Biblioteka uruchomieniowa dla pakietu clip
+Summary(pl.UTF-8):   Biblioteka uruchomieniowa dla pakietu clip
 Group:		Libraries
 # ??? not used
 #PreReq:		/sbin/ldconfig
@@ -86,38 +86,38 @@ Group:		Libraries
 %description lib
 This package provides runtime shared libraries for CLIP package.
 
-%description lib -l pl
-Ten pakiet dostarcza wspó³dzielone biblioteki uruchomieniowe dla
+%description lib -l pl.UTF-8
+Ten pakiet dostarcza wspÃ³Å‚dzielone biblioteki uruchomieniowe dla
 pakietu CLIP.
 
 
 %package cobra
 Summary:	COBRA development for clip
-Summary(pl):	Biblioteki COBRA dla pakietu clip
+Summary(pl.UTF-8):   Biblioteki COBRA dla pakietu clip
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 
 %description cobra
 This package provides COBRA development for CLIP package
 
-%description cobra -l pl
+%description cobra -l pl.UTF-8
 Ten pakiet dostarcza biblioteki COBRA dla pakietu clip.
 
 %package codb
 Summary:	CLIP object data base
-Summary(pl):	Obiektowa baza danych CLIP
+Summary(pl.UTF-8):   Obiektowa baza danych CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 
 %description codb
 This package provides CLIP object data base.
 
-%description codb -l pl
-Ten pakiet dostarcza obiektow± bazê danych CLIP.
+%description codb -l pl.UTF-8
+Ten pakiet dostarcza obiektowÄ… bazÄ™ danych CLIP.
 
 %package bzip2
 Summary:	CLIP bzip2 binding
-Summary(pl):	Wi±zanie bzip2 dla pakietu CLIP
+Summary(pl.UTF-8):   WiÄ…zanie bzip2 dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	bzip2-libs
@@ -125,24 +125,24 @@ Requires:	bzip2-libs
 %description bzip2
 This package provides bzip2 binding for CLIP.
 
-%description bzip2 -l pl
-Ten pakiet dostarcza wi±zanie bzip2 dla pakiet CLIP.
+%description bzip2 -l pl.UTF-8
+Ten pakiet dostarcza wiÄ…zanie bzip2 dla pakiet CLIP.
 
 %package com
 Summary:	COM-port binding for CLIP
-Summary(pl):	Wi±zanie portu COM dla pakietu CLIP
+Summary(pl.UTF-8):   WiÄ…zanie portu COM dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 
 %description com
 This package provides COM-port binding for CLIP.
 
-%description com -l pl
-Wi±zanie portu COM dla pakietu CLIP.
+%description com -l pl.UTF-8
+WiÄ…zanie portu COM dla pakietu CLIP.
 
 %package crypto
 Summary:	CLIP cryptographic binding
-Summary(pl):	Wi±zanie kryptograficzne CLIP
+Summary(pl.UTF-8):   WiÄ…zanie kryptograficzne CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	openssl
@@ -150,24 +150,24 @@ Requires:	openssl
 %description crypto
 This package provides cryptographic binding for CLIP.
 
-%description crypto -l pl
-Ten pakiet dostarcza wi±zanie kryptograficzne dla pakietu CLIP.
+%description crypto -l pl.UTF-8
+Ten pakiet dostarcza wiÄ…zanie kryptograficzne dla pakietu CLIP.
 
 %package cti
 Summary:	CLIP cti binding
-Summary(pl):	Wi±zanie cti dla pakietu CLIP
+Summary(pl.UTF-8):   WiÄ…zanie cti dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 
 %description cti
 This package provides cti binding for CLIP.
 
-%description cti -l pl
-Ten pakiet dostarcza wi±zanie cti dla pakietu CLIP.
+%description cti -l pl.UTF-8
+Ten pakiet dostarcza wiÄ…zanie cti dla pakietu CLIP.
 
 %package gtk
 Summary:	CLIP GTK+ binding
-Summary(pl):	Wi±zanie GTK+ dla pakietu CLIP
+Summary(pl.UTF-8):   WiÄ…zanie GTK+ dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	gtk+
@@ -175,12 +175,12 @@ Requires:	gtk+
 %description gtk
 This package provides GTK+ binding for CLIP.
 
-%description gtk -l pl
-Ten pakiet dostarcza wi±zanie GTK+ dla pakietu CLIP.
+%description gtk -l pl.UTF-8
+Ten pakiet dostarcza wiÄ…zanie GTK+ dla pakietu CLIP.
 
 %package gtk2
 Summary:	CLIP GTK+2 binding
-Summary(pl):	Wi±zanie GTK+2 dla pakietu CLIP
+Summary(pl.UTF-8):   WiÄ…zanie GTK+2 dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	gtk+2
@@ -188,12 +188,12 @@ Requires:	gtk+2
 %description gtk2
 This package provides gtk2 binding for CLIP.
 
-%description gtk2 -l pl
-Ten pakiet dostarcza wi±zanie GTK+2 dla pakietu CLIP.
+%description gtk2 -l pl.UTF-8
+Ten pakiet dostarcza wiÄ…zanie GTK+2 dla pakietu CLIP.
 
 %package gzip
 Summary:	CLIP gzip binding
-Summary(pl):	Wi±zanie gzip dla pakietu CLIP
+Summary(pl.UTF-8):   WiÄ…zanie gzip dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	zlib
@@ -201,12 +201,12 @@ Requires:	zlib
 %description gzip
 This package provides gzip binding for CLIP.
 
-%description gzip -l pl
-Ten pakiet dostarcza wi±zanie gzip dla pakietu CLIP.
+%description gzip -l pl.UTF-8
+Ten pakiet dostarcza wiÄ…zanie gzip dla pakietu CLIP.
 
 %package mysql
 Summary:	CLIP MySQL binding
-Summary(pl):	Wi±zanie MySQL dla pakietu CLIP
+Summary(pl.UTF-8):   WiÄ…zanie MySQL dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	mysql
@@ -214,24 +214,24 @@ Requires:	mysql
 %description mysql
 This package provides MySQL binding for CLIP.
 
-%description mysql -l pl
-Ten pakiet dostarcza wi±zanie MySQL dla pakietu CLIP.
+%description mysql -l pl.UTF-8
+Ten pakiet dostarcza wiÄ…zanie MySQL dla pakietu CLIP.
 
 %package oasis
 Summary:	CLIP oasis binding
-Summary(pl):	Wi±zanie oasis dla pakietu CLIP
+Summary(pl.UTF-8):   WiÄ…zanie oasis dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 
 %description oasis
 This package provides oasis binding for CLIP.
 
-%description oasis -l pl
-Ten pakiet dostarcza wi±zanie oasis dla pakietu CLIP.
+%description oasis -l pl.UTF-8
+Ten pakiet dostarcza wiÄ…zanie oasis dla pakietu CLIP.
 
 %package odbc
 Summary:	CLIP ODBC binding
-Summary(pl):	Wi±zanie ODBC dla pakietu CLIP
+Summary(pl.UTF-8):   WiÄ…zanie ODBC dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	unixODBC
@@ -239,12 +239,12 @@ Requires:	unixODBC
 %description odbc
 This package provides ODBC binding for CLIP.
 
-%description odbc -l pl
-Ten pakiet dostarcza wi±zanie ODBC dla pakietu CLIP.
+%description odbc -l pl.UTF-8
+Ten pakiet dostarcza wiÄ…zanie ODBC dla pakietu CLIP.
 
 %package postgres
 Summary:	CLIP PostgreSQL binding
-Summary(pl):	Wi±zanie PostgreSQL dla pakietu CLIP
+Summary(pl.UTF-8):   WiÄ…zanie PostgreSQL dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	postgresql-libs
@@ -252,24 +252,24 @@ Requires:	postgresql-libs
 %description postgres
 This package provides PostgreSQL binding for CLIP.
 
-%description postgres -l pl
-Ten pakiet dostarcza wi±zanie PostgreSQL dla pakietu CLIP.
+%description postgres -l pl.UTF-8
+Ten pakiet dostarcza wiÄ…zanie PostgreSQL dla pakietu CLIP.
 
 %package rtf
 Summary:	CLIP RTF binding
-Summary(pl):	Wi±zanie RTF dla pakietu CLIP
+Summary(pl.UTF-8):   WiÄ…zanie RTF dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 
 %description rtf
 This package provides RTF binding for CLIP.
 
-%description rtf -l pl
-Ten pakiet dostarcza wi±zanie RTF dla pakietu CLIP.
+%description rtf -l pl.UTF-8
+Ten pakiet dostarcza wiÄ…zanie RTF dla pakietu CLIP.
 
 %package gd
 Summary:	CLIP gd binding
-Summary(pl):	Wi±zanie gd dla pakietu CLIP
+Summary(pl.UTF-8):   WiÄ…zanie gd dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 Requires:	gd
@@ -277,20 +277,20 @@ Requires:	gd
 %description gd
 This package provides gd binding for CLIP.
 
-%description gd -l pl
-Ten pakiet dostarcza wi±zanie gd dla pakietu CLIP.
+%description gd -l pl.UTF-8
+Ten pakiet dostarcza wiÄ…zanie gd dla pakietu CLIP.
 
 %package fw
 Summary:	CLIP fw binding
-Summary(pl):	Wi±zanie fw dla pakietu CLIP
+Summary(pl.UTF-8):   WiÄ…zanie fw dla pakietu CLIP
 Group:		Libraries
 Requires:	%{name}-lib = %{version}-%{release}
 
 %description fw
 This package provides fw binding for CLIP.
 
-%description fw -l pl
-Ten pakiet dostarcza wi±zanie fw dla pakietu CLIP.
+%description fw -l pl.UTF-8
+Ten pakiet dostarcza wiÄ…zanie fw dla pakietu CLIP.
 
 %prep
 %setup -q -n %{name}-prg-%{version}-1
