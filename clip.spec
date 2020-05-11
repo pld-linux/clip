@@ -13,7 +13,7 @@
 %bcond_with	mysql
 %bcond_with	oasis
 %bcond_with	odbc
-%bcond_with	postgres
+%bcond_with	pgsql
 %bcond_with	rtf
 %bcond_with	fw
 #
@@ -39,7 +39,7 @@ BuildRequires:	pam-devel
 %{?with_gtk2:BuildRequires:	gtk+2-devel >= 1:2.0}
 %{?with_mysql:BuildRequires:	mysql-devel}
 %{?with_crypto:BuildRequires:	openssl-devel}
-%{?with_postgres:BuildRequires:	postgresql-devel}
+%{?with_pgsql:BuildRequires:	postgresql-devel}
 BuildRequires:	readline-devel
 %{?with_odbc:BuildRequires:	unixODBC-devel}
 %{?with_gzip:BuildRequires:	zlib-devel}
@@ -547,7 +547,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{clipdir}/term
 %{clipdir}/term/*
 
-%if "%{with_cobra}" != "0"
+%if %{with cobra}
 %files cobra
 %defattr(644,root,root,755)
 %attr(755,root,root) %{clipdir}/bin/cobra_clnt1
@@ -564,7 +564,7 @@ rm -rf $RPM_BUILD_ROOT
 %{clipdir}/locale.po/*/cobra*
 %endif
 
-%if "%{with_codb}" != "0"
+%if %{with codb}
 %files codb
 %defattr(644,root,root,755)
 %attr(755,root,root) %{clipdir}/bin/codb_*
@@ -582,14 +582,14 @@ rm -rf $RPM_BUILD_ROOT
 %lang(es) %{clipdir}/locale.po/es_*/codb.po
 %endif
 
-%if "%{with_bzip2}" != "0"
+%if %{with bzip2}
 %files bzip2
 %defattr(644,root,root,755)
 %{clipdir}/doc/example/clip-bzip2
 %{clipdir}/lib/libclip-bzip2.*
 %endif
 
-%if "%{with_com}" != "0"
+%if %{with com}
 %files com
 %defattr(644,root,root,755)
 %{clipdir}/doc/example/clip-com
@@ -597,14 +597,14 @@ rm -rf $RPM_BUILD_ROOT
 %{clipdir}/lib/libclip-com.*
 %endif
 
-%if "%{with_crypto}" != "0"
+%if %{with crypto}
 %files crypto
 %defattr(644,root,root,755)
 %{clipdir}/doc/example/clip-crypto
 %{clipdir}/lib/libclip-crypto.*
 %endif
 
-%if "%{with_cti}" != "0"
+%if %{with cti}
 %files cti
 %defattr(644,root,root,755)
 %{clipdir}/doc/example/clip-cti
@@ -617,7 +617,7 @@ rm -rf $RPM_BUILD_ROOT
 #%{clipdir}/locale.pot/clip-cti/*.pot
 %endif
 
-%if "%{with_gtk}" != "0"
+%if %{with gtk}
 %files gtk
 %defattr(644,root,root,755)
 #%{clipdir}/cliprc/clip-gtk.cliprc
@@ -630,7 +630,7 @@ rm -rf $RPM_BUILD_ROOT
 #%{clipdir}/locale.pot/clip-gtk/*
 %endif
 
-%if "%{with_gtk2}" != "0"
+%if %{with gtk2}
 %files gtk2
 %defattr(644,root,root,755)
 %{clipdir}/cliprc/clip-gtk2.cliprc
@@ -644,14 +644,14 @@ rm -rf $RPM_BUILD_ROOT
 #%{clipdir}/locale.pot/clip-gtk2/*
 %endif
 
-%if "%{with_gzip}" != "0"
+%if %{with gzip}
 %files gzip
 %defattr(644,root,root,755)
 %{clipdir}/doc/example/clip-gzip
 %{clipdir}/lib/libclip-gzip.*
 %endif
 
-%if "%{with_mysql}" != "0"
+%if %{with mysql}
 %files mysql
 %defattr(644,root,root,755)
 %{clipdir}/doc/example/clip-mysql
@@ -660,7 +660,7 @@ rm -rf $RPM_BUILD_ROOT
 %{clipdir}/lib/libclip-mysql.*
 %endif
 
-%if "%{with_oasis}" != "0"
+%if %{with oasis}
 %files oasis
 %defattr(644,root,root,755)
 %{clipdir}/include/nanfor
@@ -669,13 +669,13 @@ rm -rf $RPM_BUILD_ROOT
 %{clipdir}/lib/libclip-netto.*
 %endif
 
-%if "%{with_odbc}" != "0"
+%if %{with odbc}
 %files odbc
 %defattr(644,root,root,755)
 %{clipdir}/lib/libclip-odbc.*
 %endif
 
-%if "%{with_postgres}" != "0"
+%if %{with pgsql}
 %files postgres
 %defattr(644,root,root,755)
 %{clipdir}/doc/example/clip-postgres
@@ -684,7 +684,7 @@ rm -rf $RPM_BUILD_ROOT
 %{clipdir}/lib/libclip-postgres.*
 %endif
 
-%if "%{with_rtf}" != "0"
+%if %{with rtf}
 %files rtf
 %defattr(644,root,root,755)
 %{clipdir}/doc/example/clip-rtf
@@ -693,7 +693,7 @@ rm -rf $RPM_BUILD_ROOT
 %{clipdir}/lib/libclip-rtf.*
 %endif
 
-%if "%{with_gd}" != "0"
+%if %{with gd}
 %files gd
 %defattr(644,root,root,755)
 %{clipdir}/doc/example/clip-gd
@@ -703,7 +703,7 @@ rm -rf $RPM_BUILD_ROOT
 %{clipdir}/lib/libgd.*
 %endif
 
-%if "%{with_fw}" != "0"
+%if %{with fw}
 %files fw
 %defattr(644,root,root,755)
 %{clipdir}/doc/example/clip-fw
